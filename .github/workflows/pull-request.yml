@@ -41,6 +41,6 @@ jobs:
           command: build
           target: ami.json
         env:
-          access_key: ${{ secrets.AWS_ACCESS_KEY }}
-          secret_key: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
           
