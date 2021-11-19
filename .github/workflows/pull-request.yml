@@ -34,3 +34,13 @@ jobs:
           target: ami.json
         env:
           PACKER_LOG: 1
+
+      - name: Build Ami
+        uses: hashicorp/packer-github-actions@master
+        with:
+          command: build
+          target: ami.json
+        env:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+          
