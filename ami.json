@@ -1,7 +1,5 @@
 {
     "variables": {
-        "AWS_ACCESS_KEY_ID": "AKIAVTZ77WXQUTFQCTMW",
-        "AWS_SECRET_ACCESS_KEY": "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",
         "source_ami": "ami-083654bd07b5da81d",
         "aws_region": "us-east-1",
         "subnet_id": "subnet-0a9aa942d3bef1486",
@@ -10,6 +8,8 @@
     "builders": [
         {
             "type": "amazon-ebs",
+            "access_key": "{{user `AWS_ACCESS_KEY_ID`}}",
+            "secret_key": "{{user `AWS_SECRET_ACCESS_KEY`}}",
             "region": "{{user `aws_region`}}",
             "instance_type": "t2.micro",
             "subnet_id": "{{user `subnet_id`}}",

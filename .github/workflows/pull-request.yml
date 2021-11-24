@@ -44,11 +44,12 @@ jobs:
         uses: hashicorp/packer-github-actions@v0.2.0
         with: 
           command: build
+          arguments: "-var AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}} -var AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}"
           target: ami.json
-        env: 
-          PACKER_LOG: 1
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        # env: 
+        #   PACKER_LOG: 1
+        #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       # - name: Build Ami
       #   uses: hashicorp/packer-github-actions@v0.2.0
