@@ -36,7 +36,8 @@ jobs:
           PACKER_LOG: 1
 
       - name: Build Ami
-        uses: hashicorp/packer-github-actions@master
+        uses: hashicorp/packer-github-actions@v0.2.0
+        # uses: hashicorp/packer-github-actions@master
         with:
           command: build
           target: ami.json
